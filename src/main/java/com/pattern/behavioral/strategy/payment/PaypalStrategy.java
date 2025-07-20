@@ -1,4 +1,4 @@
-package org.pattern.behavioral.strategy.payment;
+package com.pattern.behavioral.strategy.payment;
 
 public class PaypalStrategy implements PaymentStrategy{
     private final String email;

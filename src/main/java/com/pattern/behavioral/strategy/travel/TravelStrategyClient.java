@@ -1,4 +1,4 @@
-package org.pattern.behavioral.strategy.travel;
+package com.pattern.behavioral.strategy.travel;
 
 public class TravelStrategyClient {
 
