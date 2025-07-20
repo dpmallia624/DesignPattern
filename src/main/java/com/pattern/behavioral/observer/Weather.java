@@ -1,4 +1,4 @@
-package com.pattern.observer;
+package com.pattern.behavioral.observer;
 
 public interface Weather {
     void notifyObservers();

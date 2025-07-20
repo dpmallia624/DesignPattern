@@ -1,7 +1,6 @@
-package com.pattern.observer;
+package com.pattern.behavioral.observer;
 
-public class GeneralDisplay implements Observer{
-
+public class StatisticsDisplay implements Observer{
     private double  temperature,  humidity,  pressure;
 
     @Override
@@ -13,7 +12,7 @@ public class GeneralDisplay implements Observer{
     }
 
     private void display(){
-        System.out.println("Current condition: temperature "+ temperature + "F degree, humidity "+ humidity+
-                "% and pressure "+ pressure+ " miles/hour");
+        System.out.println("Statistics condition: temperature "+ temperature + "F degree, humidity "+ humidity+
+                "% and pressure "+ pressure + " miles/hour");
     }
 }

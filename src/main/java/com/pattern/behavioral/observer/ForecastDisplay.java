@@ -1,4 +1,4 @@
-package com.pattern.observer;
+package com.pattern.behavioral.observer;
 
 public class ForecastDisplay implements Observer{
     private double  temperature,  humidity,  pressure;
