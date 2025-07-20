@@ -1,0 +1,46 @@
+@startuml
+title "Observer Pattern"
+
+interface Weather {
+    + registerWeather(observer: Observer): void
+    + unRegisterWeather(observer: Observer) : void
+    + notify() : void
+}
+
+Weather <|-- WeatherStation
+
+class WeatherStation {
+    - Observer[] observers
+    + registerWeather(observer: Observer): void
+    + unRegisterWeather(observer: Observer) : void
+    + notify() : void
+}
+
+interface Observer {
+    + update(temperature: double, humidity: double, pressure: double) : void
+}
+
+class GeneralDisplay {
+      + update(temperature: double, humidity: double, pressure: double) : void
+      - display() : void
+}
+
+class ForecastDisplay {
+      + update(temperature: double, humidity: double, pressure: double) : void
+      - display() :void
+}
+
+class StatisticsDisplay {
+      + update(temperature: double, humidity: double, pressure: double) : void
+      - display() : void
+}
+
+Observer <|-- GeneralDisplay
+Observer <|-- ForecastDisplay
+Observer <|-- StatisticsDisplay
+
+WeatherStation "1" *-- "0..*" GeneralDisplay : contains
+WeatherStation "1" *-- "0..*" ForecastDisplay : contains
+WeatherStation "1" *-- "0..*" StatisticsDisplay : contains
+
+@enduml
