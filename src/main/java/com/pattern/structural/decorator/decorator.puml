@@ -1,0 +1,37 @@
+@startuml
+title "Decorator Pattern"
+
+
+abstract class CarDecorator {
+    car: Car
+}
+
+interface Car {
+    assembly() : void
+    description(): String
+}
+
+Car <|-- BasicCar
+Car <|-- CarDecorator
+
+class BasicCar {
+    + assembly(): void
+    + description(): String
+}
+
+class LuxuryCar {
+     + assembly(): void
+     + description(): String
+}
+
+class SportCar {
+     + assembly(): void
+     + description(): String
+}
+
+CarDecorator <|- LuxuryCar
+CarDecorator <|- SportCar
+
+CarDecorator --> Car
+
+@enduml
