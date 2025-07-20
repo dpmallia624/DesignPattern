@@ -3,7 +3,7 @@ title "Strategy Pattern"
 'Strategy pattern define a family of algorithms, encapsulated each one and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it'
 
 interface TravelStrategy {
-    travel()
+    travel(source: String, destination: String)
 }
 
 TravelStrategy <|-- CarTravelStrategy
@@ -12,20 +12,20 @@ TravelStrategy <|-- WalkTravelStrategy
 
 
 class CarTravelStrategy {
-    + travel()
+    + travel(source: String, destination: String)
 }
 
 class CycleTravelStrategy {
-    + travel()
+    + travel(source: String, destination: String)
 }
 
 class WalkTravelStrategy {
-    + travel()
+    + travel(source: String, destination: String)
 }
 
 class TravelPlanner {
-    TravelStrategy
-    + planTravel()
+    travelStrategy: TravelStrategy
+    + planTravel(source: String, destination: String)
 }
 
 TravelPlanner -right-> TravelStrategy

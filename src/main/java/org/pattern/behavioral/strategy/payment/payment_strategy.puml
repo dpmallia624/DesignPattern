@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+interface PaymentStrategy {
+    pay(totalPrice: double) : void
+}
+
+PaymentStrategy <|-- UpiStrategy
+PaymentStrategy <|-- PaypalStrategy
+PaymentStrategy <|-- CreditCardStrategy
+
+class UpiStrategy {
+    + pay(totalPrice: double) : void
+}
+
+class PaypalStrategy {
+    + pay(totalPrice: double) : void
+}
+
+class CreditCardStrategy {
+    + pay(totalPrice: double) : void
+}
+
+class ShoppingCart {
+    - items : List<Item>
+    + addItem(item: Item)
+    + removeItem(item: Item)
+    + pay(paymentStrategy: PaymentStrategy)
+}
+
+class Item {
+    - name: String
+    - price: double
+    - code: String
+    + getPrice(): double
+}
+
+ShoppingCart -right-> PaymentStrategy
+ShoppingCart "1" *-- "0..*" Item : contains
+@enduml
