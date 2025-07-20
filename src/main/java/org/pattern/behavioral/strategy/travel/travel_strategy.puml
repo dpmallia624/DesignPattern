@@ -1,6 +1,5 @@
 @startuml
-title "Strategy Pattern"
-'Strategy pattern define a family of algorithms, encapsulated each one and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it'
+title "Strategy Pattern with Travel example"
 
 interface TravelStrategy {
     travel(source: String, destination: String)
