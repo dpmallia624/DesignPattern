@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface FurnitureFactory {
+    + createChair() : Chair
+    + CreateSofa() : Sofa
+}
+class VictorianFurnitureFactory {
+    + createChair() : Chair
+    + CreateSofa() : Sofa
+}
+
+class ModernFurnitureFactory {
+    + createChair() : Chair
+    + CreateSofa() : Sofa
+}
+
+FurnitureFactory <|-- VictorianFurnitureFactory
+FurnitureFactory <|-- ModernFurnitureFactory
+
+
+interface Chair {
++ build(): void
+}
+
+interface Sofa {
++ build(): void
+}
+
+Chair <|-- VictorianChair
+Chair <|-- ModernChair
+
+Sofa <|-- VictorianSofa
+Sofa <|-- ModernSofa
+
+class VictorianChair {
++ build(): void
+}
+
+class ModernChair {
++ build(): void
+}
+
+class VictorianSofa {
++ build(): void
+}
+
+class ModernSofa {
++ build(): void
+}
+
+VictorianFurnitureFactory --> VictorianSofa
+VictorianFurnitureFactory --> VictorianChair
+
+ModernFurnitureFactory --> ModernSofa
+ModernFurnitureFactory --> ModernChair
+@enduml

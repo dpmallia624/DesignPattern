@@ -2,5 +2,5 @@
 Creational patterns provide flexibility of object creation.
 
 - Singleton pattern
-- Factory pattern
+- Factory Method pattern
 - Abstract Factory pattern

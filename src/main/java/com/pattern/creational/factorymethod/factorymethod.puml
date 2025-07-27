@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ShapeFactory {
+    + getShape(type: String) : Shape
+}
+class StandardShapeFactory {
+    + getShape(type: String) : Shape
+}
+
+ShapeFactory <|-- StandardShapeFactory
+
+interface Shape {
+    + draw() : void
+}
+
+class Square {
+    + draw() : void
+}
+
+class Rectangle {
+    + draw() : void
+}
+
+class Circle {
+    + draw() : void
+}
+
+Shape <|-- Square
+Shape <|-- Rectangle
+Shape <|-- Circle
+
+StandardShapeFactory --> Square
+StandardShapeFactory --> Rectangle
+StandardShapeFactory --> Circle
+@enduml
