@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class ChocolateBoiler {
+    - static uniqueInstance: ChocolateBoiler
+    + static getInstance(): ChocolateBoiler
+    + boil()
+    + empty()
+}
+
+
+@enduml
